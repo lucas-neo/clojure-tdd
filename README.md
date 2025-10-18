@@ -508,19 +508,3 @@ Ran 10 tests containing 18 assertions.
     (when-not encontrou? (throw (IllegalArgumentException. "Tarefa não encontrada")))
     (persistent! acc-t)))
 ```
-
----
-
-## Considerações finais
-
-* **Cobertura dos requisitos**: REQ‑01…REQ‑05 atendidos com testes positivos e negativos.
-* **Contratos explícitos por exceção** para operações inválidas.
-* **Idempotência** nas mudanças de status e na edição quando não há alteração.
-
-### Próximos passos
-
-* Geração real de `:id` (UUID/contador atômico).
-* Repositório em memória/DB + `find-by-id`, `list`, `create!`, `update!`, `delete!`.
-* Especificações com `clojure.spec`/Malli + property‑based testing (`test.check`).
-* API HTTP (Ring) e testes de integração.
-* CI no GitHub Actions.
